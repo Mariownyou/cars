@@ -24,3 +24,8 @@ class Photo(models.Model):
     title = models.CharField('Заголовок', max_length=100)
     car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='photos')
     date  = models.DateTimeField('Время', auto_now_add=True)
+    
+    def __str__(self):
+        url = 'http://127.0.0.1:4000'
+        img = self.image.url
+        return url + img
