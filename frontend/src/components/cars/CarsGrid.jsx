@@ -4,9 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import loaded from '../../actions/loaded'
 import set_items from '../../actions/set_items'
 import Loading from '../ui/Loading'
-import Car from './Car'
-import PhotoGrid from './PhotoGrid'
-import Photo from './Photo'
+import CarDetail from './CarDetail'
 
 const CarsGrid = () => {
     const items = useSelector(state => state.items)
@@ -14,7 +12,8 @@ const CarsGrid = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        const url = 'http://127.0.0.1:4000/api/cars/'
+        // const url = 'http://127.0.0.1:4000/api/cars/'
+        const url = 'https://6d7042ceaea7.ngrok.io/api/cars/'
         const fetchItems = async () => {
             const result = await axios(url)
             console.log(result.data)
@@ -28,10 +27,7 @@ const CarsGrid = () => {
         <div>
             {items.map(
                 item => (
-                    <div key={item.url}>
-                        <Car item={item}/>
-                        <PhotoGrid items={item.photos}/>
-                    </div>
+                    <CarDetail item={item} key={item.id}/>
                 )
             )}
         </div>

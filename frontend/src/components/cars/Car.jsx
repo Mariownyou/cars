@@ -1,5 +1,6 @@
 import React from 'react'
 import { Paper, Typography } from '@material-ui/core'
+import PhotoGrid from './PhotoGrid'
 
 const Car = ({item}) => {
     return (
@@ -10,6 +11,7 @@ const Car = ({item}) => {
             <Typography variant='h4'>
                 {item.rare}
             </Typography>
+            <PhotoGrid items={item.photos}/>
         </Paper>
     )
 }

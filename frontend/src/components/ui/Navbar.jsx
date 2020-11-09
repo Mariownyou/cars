@@ -1,13 +1,12 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Toolbar, Typography, Box } from '@material-ui/core'
+import Expand from './Expand'
 
 const Navbar = () => {
     return (
-        <AppBar position='static'>
-            <Toolbar>
-                <Typography variant='h4' color='inherit'>Leva</Typography>
-            </Toolbar>
-        </AppBar>
+        <Box mb={2}>
+            <Expand />
+        </Box>
     )
 }
 
